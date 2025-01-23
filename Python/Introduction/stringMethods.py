@@ -11,7 +11,7 @@ c = "!!!!!Jai ho baka!!!!!!!"
 
 print(c.rstrip("!"))    # removes trailling character
 
-print(c.replace("baka", "Johnny"))  # replaces first enter string with second string
+print(c.replace("baka", "Johnny"))  # replaces first entered string with second string
 
 d = "hey Aryan i am Jay"
 print(d.split())    # converts all the substrings before and after a white space into a list
