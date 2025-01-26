@@ -11,3 +11,6 @@ n1 = n1*2
 print(n1)
 n1 = n1/2
 print(n1)
+
+n1 = np.power(4)
+print(n1)

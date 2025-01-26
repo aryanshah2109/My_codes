@@ -41,5 +41,8 @@ n4 = np.array([1,2,3,4,5],ndmin=5)
 print(n4)
 print(n4.ndim)
 
+n5 = np.linspace(1,10,4)
+print(n5)
+
 
 

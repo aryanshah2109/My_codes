@@ -38,3 +38,7 @@ print(f"\n{n5}\n")
 
 n6 = np.random.randint(1,100,10)
 print(f"\n{n6}\n")
+
+n7 = np.random.random((2,6))    # creates an array of given rows and cols of random
+                                # floats b/w 0 and 1
+print(n7)
