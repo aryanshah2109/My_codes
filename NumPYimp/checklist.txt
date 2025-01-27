@@ -1,0 +1,123 @@
+Here's a **NumPy checklist** tailored for AI/ML tasks, covering the most commonly used functions and operations:
+
+---
+
+### 1. **Array Creation**
+- `np.array()`: Create arrays.
+- `np.zeros()`: Create an array of zeros.
+- `np.ones()`: Create an array of ones.
+- `np.empty()`: Create an uninitialized array.
+- `np.full()`: Create an array filled with a specific value.
+- `np.arange(start, stop, step)`: Create arrays with a range of values.
+- `np.linspace(start, stop, num)`: Create arrays with evenly spaced values.
+- `np.random.rand()`: Generate random values in `[0, 1)`.
+- `np.random.randn()`: Generate random values with a normal distribution.
+- `np.random.randint(low, high, size)`: Generate random integers.
+
+---
+
+### 2. **Array Shape & Size**
+- `.shape`: Get the shape of an array.
+- `.reshape()`: Reshape an array without changing its data.
+- `np.expand_dims()`: Add an extra dimension (useful for AI/ML models).
+- `np.squeeze()`: Remove single-dimensional entries.
+- `np.transpose()`: Transpose an array (swap rows/columns).
+- `np.ravel()`: Flatten an array.
+
+---
+
+### 3. **Indexing & Slicing**
+- Indexing: Access elements using indices.
+- Slicing: `arr[start:stop:step]`.
+- Boolean indexing: `arr[arr > threshold]`.
+- Fancy indexing: Access elements using an index array.
+
+---
+
+### 4. **Mathematical Operations**
+- `np.add()`, `np.subtract()`, `np.multiply()`, `np.divide()`: Element-wise operations.
+- `np.power()`: Raise elements to a power.
+- `np.sqrt()`: Square root.
+- `np.dot()`: Dot product.
+- `np.matmul()`: Matrix multiplication.
+- `np.exp()`, `np.log()`, `np.log10()`: Exponential and logarithmic functions.
+- `np.sum()`, `np.mean()`, `np.median()`, `np.std()`: Aggregation functions.
+- `np.argmax()`, `np.argmin()`: Indices of the max and min values.
+
+---
+
+### 5. **Broadcasting**
+- Use broadcasting rules to perform operations on arrays of different shapes.
+- Example: Adding a 1D array to a 2D array.
+
+---
+
+### 6. **Randomization**
+- `np.random.shuffle()`: Shuffle an array.
+- `np.random.permutation()`: Randomly permute an array.
+- `np.random.choice()`: Randomly select elements with or without replacement.
+
+---
+
+### 7. **Linear Algebra**
+- `np.linalg.inv()`: Inverse of a matrix.
+- `np.linalg.det()`: Determinant of a matrix.
+- `np.linalg.eig()`: Eigenvalues and eigenvectors.
+- `np.linalg.norm()`: Compute matrix/vector norm.
+- `np.linalg.solve()`: Solve linear equations.
+- `np.linalg.svd()`: Singular Value Decomposition (SVD).
+
+---
+
+### 8. **Statistics**
+- `np.mean()`, `np.median()`, `np.std()`, `np.var()`: Central tendency and dispersion.
+- `np.percentile()`: Calculate percentiles.
+- `np.corrcoef()`: Correlation coefficient.
+
+---
+
+### 9. **Advanced Indexing**
+- `np.where()`: Find indices of elements satisfying a condition.
+- `np.take()`: Take elements from an array along an axis.
+- `np.put()`: Modify specific elements.
+
+---
+
+### 10. **Preprocessing for ML**
+- **Normalization**:
+  ```python
+  norm_arr = (arr - np.min(arr)) / (np.max(arr) - np.min(arr))
+  ```
+- **Standardization**:
+  ```python
+  std_arr = (arr - np.mean(arr)) / np.std(arr)
+  ```
+- **One-hot Encoding**:
+  ```python
+  one_hot = np.eye(num_classes)[labels]
+  ```
+
+---
+
+### 11. **Performance Optimization**
+- Use `np.vectorize()` for vectorizing functions.
+- Use `np.tile()` to replicate arrays.
+- Use `np.meshgrid()` for creating coordinate grids.
+
+---
+
+### 12. **File Operations**
+- `np.save()`, `np.load()`: Save/load `.npy` files.
+- `np.savetxt()`, `np.loadtxt()`: Save/load text files.
+- `np.genfromtxt()`: Load data with missing values.
+
+---
+
+### 13. **Debugging & Validation**
+- `np.isnan()`, `np.isinf()`: Check for NaN or infinity values.
+- `np.allclose(arr1, arr2)`: Check if arrays are close within a tolerance.
+- `np.unique()`: Find unique elements.
+
+---
+
+This checklist will help streamline preprocessing, analysis, and matrix operations essential in AI/ML workflows. Would you like examples or use cases for any of these?
