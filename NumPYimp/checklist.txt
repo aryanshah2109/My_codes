@@ -1,4 +1,8 @@
-Here's a **NumPy checklist** tailored for AI/ML tasks, covering the most commonly used functions and operations:
+Your NumPy checklist is already comprehensive and well-structured for AI/ML tasks. However, I’ve made a few modifications and additions to make it more robust and aligned with common AI/ML workflows. Here's the updated version:
+
+---
+
+### **NumPy Checklist for AI/ML Tasks**
 
 ---
 
@@ -13,6 +17,8 @@ Here's a **NumPy checklist** tailored for AI/ML tasks, covering the most commonl
 - `np.random.rand()`: Generate random values in `[0, 1)`.
 - `np.random.randn()`: Generate random values with a normal distribution.
 - `np.random.randint(low, high, size)`: Generate random integers.
+- `np.eye()`: Create an identity matrix.
+- `np.diag()`: Create a diagonal matrix or extract a diagonal.
 
 ---
 
@@ -23,6 +29,8 @@ Here's a **NumPy checklist** tailored for AI/ML tasks, covering the most commonl
 - `np.squeeze()`: Remove single-dimensional entries.
 - `np.transpose()`: Transpose an array (swap rows/columns).
 - `np.ravel()`: Flatten an array.
+- `np.flatten()`: Flatten an array (returns a copy).
+- `np.resize()`: Resize an array (may repeat or truncate data).
 
 ---
 
@@ -31,6 +39,8 @@ Here's a **NumPy checklist** tailored for AI/ML tasks, covering the most commonl
 - Slicing: `arr[start:stop:step]`.
 - Boolean indexing: `arr[arr > threshold]`.
 - Fancy indexing: Access elements using an index array.
+- `np.take()`: Take elements along an axis.
+- `np.put()`: Replace elements at specific indices.
 
 ---
 
@@ -43,12 +53,15 @@ Here's a **NumPy checklist** tailored for AI/ML tasks, covering the most commonl
 - `np.exp()`, `np.log()`, `np.log10()`: Exponential and logarithmic functions.
 - `np.sum()`, `np.mean()`, `np.median()`, `np.std()`: Aggregation functions.
 - `np.argmax()`, `np.argmin()`: Indices of the max and min values.
+- `np.abs()`: Absolute value.
+- `np.round()`: Round elements to a given number of decimals.
 
 ---
 
 ### 5. **Broadcasting**
 - Use broadcasting rules to perform operations on arrays of different shapes.
 - Example: Adding a 1D array to a 2D array.
+- `np.newaxis`: Add a new axis for broadcasting.
 
 ---
 
@@ -56,6 +69,9 @@ Here's a **NumPy checklist** tailored for AI/ML tasks, covering the most commonl
 - `np.random.shuffle()`: Shuffle an array.
 - `np.random.permutation()`: Randomly permute an array.
 - `np.random.choice()`: Randomly select elements with or without replacement.
+- `np.random.normal()`: Draw samples from a normal distribution.
+- `np.random.uniform()`: Draw samples from a uniform distribution.
+- `np.random.seed()`: Set the random seed for reproducibility.
 
 ---
 
@@ -66,6 +82,8 @@ Here's a **NumPy checklist** tailored for AI/ML tasks, covering the most commonl
 - `np.linalg.norm()`: Compute matrix/vector norm.
 - `np.linalg.solve()`: Solve linear equations.
 - `np.linalg.svd()`: Singular Value Decomposition (SVD).
+- `np.linalg.qr()`: QR decomposition.
+- `np.linalg.cholesky()`: Cholesky decomposition.
 
 ---
 
@@ -73,6 +91,8 @@ Here's a **NumPy checklist** tailored for AI/ML tasks, covering the most commonl
 - `np.mean()`, `np.median()`, `np.std()`, `np.var()`: Central tendency and dispersion.
 - `np.percentile()`: Calculate percentiles.
 - `np.corrcoef()`: Correlation coefficient.
+- `np.cov()`: Compute covariance matrix.
+- `np.histogram()`: Compute histogram of data.
 
 ---
 
@@ -80,6 +100,8 @@ Here's a **NumPy checklist** tailored for AI/ML tasks, covering the most commonl
 - `np.where()`: Find indices of elements satisfying a condition.
 - `np.take()`: Take elements from an array along an axis.
 - `np.put()`: Modify specific elements.
+- `np.select()`: Select elements based on conditions.
+- `np.clip()`: Clip values within a range.
 
 ---
 
@@ -96,6 +118,15 @@ Here's a **NumPy checklist** tailored for AI/ML tasks, covering the most commonl
   ```python
   one_hot = np.eye(num_classes)[labels]
   ```
+- **Binning**:
+  ```python
+  bins = np.linspace(min_val, max_val, num_bins)
+  binned = np.digitize(arr, bins)
+  ```
+- **Handling Missing Values**:
+  ```python
+  arr[np.isnan(arr)] = replacement_value
+  ```
 
 ---
 
@@ -103,6 +134,8 @@ Here's a **NumPy checklist** tailored for AI/ML tasks, covering the most commonl
 - Use `np.vectorize()` for vectorizing functions.
 - Use `np.tile()` to replicate arrays.
 - Use `np.meshgrid()` for creating coordinate grids.
+- Use `np.einsum()` for efficient Einstein summation.
+- Use `np.apply_along_axis()`: Apply a function along a specific axis.
 
 ---
 
@@ -110,6 +143,8 @@ Here's a **NumPy checklist** tailored for AI/ML tasks, covering the most commonl
 - `np.save()`, `np.load()`: Save/load `.npy` files.
 - `np.savetxt()`, `np.loadtxt()`: Save/load text files.
 - `np.genfromtxt()`: Load data with missing values.
+- `np.savez()`: Save multiple arrays into a `.npz` file.
+- `np.savez_compressed()`: Save multiple arrays in compressed format.
 
 ---
 
@@ -117,7 +152,36 @@ Here's a **NumPy checklist** tailored for AI/ML tasks, covering the most commonl
 - `np.isnan()`, `np.isinf()`: Check for NaN or infinity values.
 - `np.allclose(arr1, arr2)`: Check if arrays are close within a tolerance.
 - `np.unique()`: Find unique elements.
+- `np.any()`, `np.all()`: Check if any or all elements satisfy a condition.
+- `np.array_equal()`: Check if two arrays are equal.
 
 ---
 
-This checklist will help streamline preprocessing, analysis, and matrix operations essential in AI/ML workflows. Would you like examples or use cases for any of these?
+### 14. **Advanced Operations**
+- `np.concatenate()`: Join arrays along an axis.
+- `np.stack()`: Stack arrays along a new axis.
+- `np.split()`: Split an array into multiple sub-arrays.
+- `np.pad()`: Pad an array with values.
+- `np.repeat()`: Repeat elements of an array.
+- `np.roll()`: Roll array elements along an axis.
+
+---
+
+### 15. **AI/ML-Specific Utilities**
+- **Batch Processing**:
+  ```python
+  batches = np.array_split(data, num_batches)
+  ```
+- **Train-Test Split**:
+  ```python
+  indices = np.random.permutation(len(data))
+  train, test = data[indices[:split_idx]], data[indices[split_idx:]]
+  ```
+- **Confusion Matrix**:
+  ```python
+  confusion_matrix = np.histogram2d(true_labels, predicted_labels, bins=num_classes)[0]
+  ```
+
+---
+
+This updated checklist includes additional functions and techniques that are particularly useful for AI/ML tasks, such as handling missing values, batch processing, and advanced linear algebra operations. It also emphasizes reproducibility and performance optimization, which are critical in AI/ML workflows.

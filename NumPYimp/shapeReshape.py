@@ -29,3 +29,15 @@ arr = np.array([[1,2,3],
 print(np.expand_dims(arr,axis=0),arr.shape)
 
 print(np.expand_dims(arr,axis=1),arr.shape)
+
+
+
+# np.size(arr) returns number of elements in an array
+arr = np.array([[[1,2,3,4],[5,6,7,8]],[[9,10,11,12],[13,14,15,16]]])
+print(np.size(arr))
+
+# np.resize(arr,(newShape)) resizes the given array into the new shape
+# if required, elements are repeated 
+arr = np.array([[1, 2], [3, 4]])
+resized = np.resize(arr, (3, 3))  # Expands or repeats elements
+print("Resized array:\n", resized)

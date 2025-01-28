@@ -48,3 +48,19 @@ arr = np.linspace(10,20,5)  # creates evenly spaced array from a range including
                             # the high value 
 print(arr)
 
+# identity matrix is one where only diagonal elements have element 1 and rest have 
+# element 0 
+# np.eye(N) creates an identity matrix of shape N x N
+arr = np.eye(3)
+print(arr)
+
+# diagonal matrix is one where only diagonal elements are non zero
+# rest all elements are zero
+# np.diag([diagonal elements]) creates a diagonal matrix
+arr = np.diag([1,2,3,4])
+print(arr)
+
+# np.diag(arr) returns an array of diagonal elements of the given array
+arr = np.random.randint(10,20,size=16).reshape(4,4)
+print(arr)
+print(np.diag(arr))
