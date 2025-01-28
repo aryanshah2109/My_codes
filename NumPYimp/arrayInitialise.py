@@ -13,6 +13,10 @@ print(arr)
 print(f"dimensions = {arr.ndim}")
 print(f"shape = {arr.shape}")
 
+# ndmin= num helps initialise with a given dimension
+arr = np.array([1,2,3,4,5],ndmin=5)
+print(arr)
+
 # .shape returns number of element in each dimension and subdimensions
 
 # np.zeros((shape))
