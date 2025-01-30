@@ -51,7 +51,7 @@ Your NumPy checklist is already comprehensive and well-structured for AI/ML task
 - `np.dot()`: Dot product.
 - `np.matmul()`: Matrix multiplication.
 - `np.exp()`, `np.log()`, `np.log10()`: Exponential and logarithmic functions.
-- `np.sum()`, `np.mean()`, `np.median()`, `np.std()`: Aggregation functions.
+- `np.sum()`: Aggregation functions.
 - `np.argmax()`, `np.argmin()`: Indices of the max and min values.
 - `np.abs()`: Absolute value.
 - `np.round()`: Round elements to a given number of decimals.
@@ -69,7 +69,7 @@ Your NumPy checklist is already comprehensive and well-structured for AI/ML task
 - `np.random.shuffle()`: Shuffle an array.
 - `np.random.permutation()`: Randomly permute an array.
 - `np.random.choice()`: Randomly select elements with or without replacement.
-- `np.random.normal()`: Draw samples from a normal distribution.
+
 - `np.random.uniform()`: Draw samples from a uniform distribution.
 - `np.random.seed()`: Set the random seed for reproducibility.
 
@@ -93,7 +93,7 @@ Your NumPy checklist is already comprehensive and well-structured for AI/ML task
 - `np.corrcoef()`: Correlation coefficient.
 - `np.cov()`: Compute covariance matrix.
 - `np.histogram()`: Compute histogram of data.
-
+- `np.random.normal()`: Draw samples from a normal distribution.
 ---
 
 ### 9. **Advanced Indexing**
