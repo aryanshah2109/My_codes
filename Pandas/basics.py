@@ -16,3 +16,8 @@ aryan = [1,2,3]
 aryanNew = pd.Series(aryan,index=["x","y","z"])
 print(aryanNew)
 print(aryanNew["y"])
+
+# accessing dictionary items
+dict = {"day1" : 3, "day2" : 9, "day3" : 10, "day4" : 14}
+result = pd.Series(dict, index=["day1","day4"])     # accessing dictionary items
+print(result)   
