@@ -20,7 +20,7 @@ print("Before cleaning: ")
 print(data.info())
 print("After cleaning: ")
 print(dataCleaned.info())
-dataCleaned.to_csv(r"D:\CODING_CODES\AIML\Pandas\cleaned_Data.csv")
+dataCleaned.to_csv(r"D:\CODING_CODES\AIML\Pandas\Files\cleaned_Data.csv")
 
 # to make changes to original file:
 # data.dropna(inplace=True)
@@ -28,11 +28,11 @@ dataCleaned.to_csv(r"D:\CODING_CODES\AIML\Pandas\cleaned_Data.csv")
 # to replace data, use fillna(new_value)
 dataReplaced = data.fillna("Not known")
 print(dataReplaced.to_string())
-dataReplaced.to_csv(r"D:\CODING_CODES\AIML\Pandas\ReplacedData.csv")
+dataReplaced.to_csv(r"D:\CODING_CODES\AIML\Pandas\Files\ReplacedData.csv")
 # to replace in original file, data.fillna(replaced_data,inplace=True)
 
 # to replace only particular column empty value, you need to specify
 # column name
 data["ID"] = data["ID"].fillna("ID --")
 print(data.to_string())
-data.to_csv(r"D:\CODING_CODES\AIML\Pandas\ParticularReplacedData.csv")
+data.to_csv(r"D:\CODING_CODES\AIML\Pandas\Files\ParticularReplacedData.csv")

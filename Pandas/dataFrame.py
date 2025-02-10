@@ -18,3 +18,6 @@ print(result.loc["c"])
 
 print(result.loc[["a","b"]])
 
+# accessing particular column
+print(result["cal"])
+

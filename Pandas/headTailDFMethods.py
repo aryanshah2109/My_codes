@@ -3,7 +3,7 @@ import pandas as pd
 # returns headers and number of specified rows
 
 # printing first 10 rows of dataset.json file
-df = pd.read_json(r"D:\CODING_CODES\AIML\Pandas\dataset.json")
+df = pd.read_json(r"D:\CODING_CODES\AIML\Pandas\Files\dataset.json")
 print(df.to_string())
 print("\nUsing head method:")
 print(df.head(10))
@@ -16,3 +16,7 @@ print(df.tail())
 
 # printing info about df -> df.info()
 print(df.info())
+
+
+# printing all other featuers of a dataframe -> df.describe() 
+print(df.describe())

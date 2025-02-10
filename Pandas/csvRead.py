@@ -5,7 +5,7 @@
 # read_csv(r"path")
 
 import pandas as pd
-df = pd.read_csv("D:\CODING_CODES\AIML\Pandas\data.csv")
+df = pd.read_csv("D:\CODING_CODES\AIML\Pandas\Files\data.csv")
 print(df.to_string())
 
 # we can also directly print df but in this case if
@@ -21,7 +21,7 @@ print(pd.options.display.max_rows)
 # we have not used .to_string() then we will not see all the rows
 
 
-df = pd.read_csv(r"D:\CODING_CODES\AIML\Pandas\random_data_200.csv")
+df = pd.read_csv(r"D:\CODING_CODES\AIML\Pandas\Files\random_data_200.csv")
 print(df)
 print(df.to_string())
 
