@@ -17,27 +17,41 @@ dict = {
  
 def higherLower():
     points = 0
-    print("Welcome to the higher lower game: ")
-
+    print("\nWelcome to the higher lower game: ")
+    a = r.choice(list(dict)) 
+    b = r.choice(list(dict))
+    valA = dict.get(a)
+    valB = dict.get(b)
     while(True):
-        print("Welcome to the higher lower game: ")
-        a = r.choice(list(dict))
-        b = r.choice(list(dict))
-        
-        print("Choose which has more followers:")
+        print("\nChoose which has more followers:")
         print(f"{a} or {b}")
-        usersChoice = input("Enter your choice: ").lower()
-        if usersChoice not in [a.lower(),b.lower(),"exit"]:
-            print(f"Invalid input! Exiting the game. Current points: {points}")
+        usersChoice = input("\nEnter your choice: a or b: ").lower()
+        if usersChoice not in ["a","b","exit"]:
+            print(f"\nInvalid input! Exiting the game. Current points: {points}")
+            break
         elif usersChoice == "exit":
-            print(f"Exiting the game. Current points: {points}")
-            return
-        if usersChoice == a.lower() and dict.get(a) > dict.get(b) :
-            print(f"You scored a point. Current points: {points} ")
-            continue
-        elif usersChoice == a.lower() and dict.get(a) < dict.get(b):
-            print(f"You lost. Exiting the game. Current points: {points}")        
-
+            print(f"\nExiting the game. Current points: {points}")
+            break
+        if usersChoice == a.lower() and valA > valB :
+            points += 1
+            print(f"\nYou scored a point. Current points: {points} ")            
+            dict.pop(a)
+            a = b
+            valA = dict.get(b)
+            b = r.choice(list(dict))
+            valB = dict.get(b)
+            
+        elif usersChoice == a.lower() and valA < valB:
+            print(f"\nYou lost. Exiting the game. Current points: {points}")
+            break        
+        elif usersChoice == b.lower() and valA < valB:
+            points += 1
+            print(f"\nYou scored a point. Current points: {points} ")
+            b = r.choice(list(dict))
+            valB = dict.get(b)
+        elif usersChoice == b.lower() and valA > valB:
+            print(f"\nYou lost. Exiting the game. Current points: {points}")                     
+            break
     
 
 higherLower()
