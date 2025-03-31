@@ -2,6 +2,8 @@
 # instead of root stem. 
 # output is called lemma
 # it is more accurate than stemming
+# we use lemmatization in Q/A, chatbots, text summarization
+# lemmatization is slower than stemming
 
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()

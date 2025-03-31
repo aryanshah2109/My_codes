@@ -10,15 +10,15 @@ df = pd.read_csv(r'D:\CODING_CODES\AIML\Linear Regression\OneHotEncodingHousePri
 
 
 dummies = pd.get_dummies(df.town,dtype=int)
-# print(dummies)  
+print(dummies)  
 
 df_dummies = pd.concat([df,dummies],axis='columns')
-print(df_dummies)
+print(df_dummies.to_string())
 
 # drop one column of onehot encoding, price and town column
 df_dummies = df_dummies.drop(['town','west windsor'],axis='columns')
 
-print(df_dummies)
+print(df_dummies.to_string())
 
 x = df_dummies.drop(['price'],axis='columns')
 y = df_dummies.price
