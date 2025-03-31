@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sklearn import linear_model
 
-df = pd.read_csv(r'D:\CODING_CODES\AIML\Linear Regression\OneHotEncodingHousePrices.csv')
+df = pd.read_csv(r'D:\CODING_CODES\AIML\Machine Learning\Linear Regression\OneHotEncodingHousePrices.csv')
 
 # print(df.to_string())
 

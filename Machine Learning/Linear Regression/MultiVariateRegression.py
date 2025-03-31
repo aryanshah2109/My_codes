@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sklearn import linear_model
 
-trainingData = pd.read_csv(r'D:\CODING_CODES\AIML\Linear Regression\MVLR1.csv')
+trainingData = pd.read_csv(r'D:\CODING_CODES\AIML\Machine Learning\Linear Regression\MVLR1.csv')
 
 # cleaning data
 trainingData.bedrooms = trainingData.bedrooms.fillna(trainingData.bedrooms.median())

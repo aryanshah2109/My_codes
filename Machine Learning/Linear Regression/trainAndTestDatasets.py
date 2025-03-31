@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-df = pd.read_csv(r'D:\CODING_CODES\AIML\Linear Regression\carpricesTrainTest.csv')
+df = pd.read_csv(r'D:\CODING_CODES\AIML\Machine Learning\Linear Regression\carpricesTrainTest.csv')
 
 from sklearn.model_selection import train_test_split
 X = df[['Mileage','Age(yrs)']]

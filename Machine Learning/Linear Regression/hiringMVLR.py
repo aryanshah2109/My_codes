@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sklearn import linear_model
 
-trainingData = pd.read_csv(r'D:\CODING_CODES\AIML\Linear Regression\hiring.csv')
+trainingData = pd.read_csv(r'D:\CODING_CODES\AIML\Machine Learning\Linear Regression\hiring.csv')
 
 # cleaning data
 trainingData.experience = trainingData.experience.fillna(trainingData.experience.median())

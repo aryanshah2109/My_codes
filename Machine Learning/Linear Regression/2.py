@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sklearn import linear_model
 
-df = pd.read_csv(r'D:\CODING_CODES\AIML\Linear Regression\Predict.csv')
-training_set = pd.read_csv(r'D:\CODING_CODES\AIML\Linear Regression\One.csv')
+df = pd.read_csv(r'D:\CODING_CODES\AIML\Machine Learning\Linear Regression\Predict.csv')
+training_set = pd.read_csv(r'D:\CODING_CODES\AIML\Machine Learning\Linear Regression\One.csv')
 model = linear_model.LinearRegression()
 new_df = training_set.drop('Price',axis='columns')
 model.fit(new_df,training_set.Price)
