@@ -20,7 +20,7 @@ def decorator(function):
         print("\nDo something before the function call")
         function()
         print("Do something after the function call\n")
-    return wrapper()
+    return wrapper  
 
 # Now, call the decorator by @decorator before any function
 
@@ -37,3 +37,7 @@ def f2():
 def f3():
     print("Byee")
 
+
+f1()
+f2()
+f3()

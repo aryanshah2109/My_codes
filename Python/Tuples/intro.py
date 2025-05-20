@@ -1,7 +1,9 @@
+# tuple is immutable but list is mutable
 tup = (1,4,9.5,"Aryan",True)
 print(tup)
 print(type(tup))
-
+# tup[3] = 1
+# print(tup)    immutable hence gives error
 print("\nPrinting the tuple elements:")
 for i in range(len(tup)):
     print(tup[i])

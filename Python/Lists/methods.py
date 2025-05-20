@@ -60,6 +60,7 @@ print("\n10. Copy")
 l3 = l2.copy()  # creates a shallow copy of the list
 l3[0] = 0
 print("Copy of list l2 is ", l3)
+print("Original list: ",l2)
 
 # 11. Insert
 print("\n11. Insert")

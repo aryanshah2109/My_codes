@@ -13,7 +13,7 @@ print("Docstring is:",square.__doc__)
 # comments are used to help programmer understand the program but docstring are used to
 # document our code
 
-# comments cannot be printed but docstrings can be printed by function.__doc__
+# comments cannot be printed but docstrings can be printed by functionName.__doc__
 
 # PEP-8 stands for Python Enhancement Proposal
 # It is a document which best explains the guidelines and best practices to write an
