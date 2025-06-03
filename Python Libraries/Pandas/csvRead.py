@@ -5,7 +5,7 @@
 # read_csv(r"path")
 
 import pandas as pd
-df = pd.read_csv("D:\CODING_CODES\AIML\Pandas\Files\data.csv")
+df = pd.read_csv(r"D:\CODING_CODES\AIML\Python Libraries\Pandas\Files\data.csv")
 print(df.to_string())
 
 # we can also directly print df but in this case if
