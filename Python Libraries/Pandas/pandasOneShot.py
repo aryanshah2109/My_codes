@@ -40,7 +40,7 @@ print(series['Ekta'])
 
 print(series[4]) # we can also access by normal default indexing but it can give warning
 
-"""DataFrames: Data frames in Pandas are usually multi-dimensional tables, called DataFrames.Series is like a column, a DataFrame is the whole table. Dataframes can have different dtypes for each column but 2D arrays canno"""
+"""DataFrames: Data frames in Pandas are usually multi-dimensional tables, called DataFrames. Series is like a column, a DataFrame is the whole table. Dataframes can have different dtypes for each column but 2D arrays cannot"""
 
 data = [[1,2,'a'],[4,5,'b'],[3,6,'c']]
 df = pd.DataFrame(data)

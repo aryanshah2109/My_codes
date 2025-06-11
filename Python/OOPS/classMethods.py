@@ -12,7 +12,9 @@ class Person:
     #     self.__class__.name = newName
 
 a = Person()
+b = Person()
 print(a.name)
-print(Person.name)
-a.changeName("Ram")
-print(Person.name)
+print(b.name)
+a.changeName("Aryan")
+print(a.name)
+print(b.name)

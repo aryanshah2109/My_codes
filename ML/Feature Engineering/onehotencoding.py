@@ -20,7 +20,7 @@ print(df['fuel'].unique())
 pd.get_dummies(df,columns=['fuel','owner'])
 
 # Removing one column to ensure multicolinearity
-pd.get_dummies(df,columns=['fuel','owner'],drop_first=True)
+print(pd.get_dummies(df,columns=['fuel','owner'],drop_first=True).to_string())
 
 # OHE by Scikit learn
 from sklearn.model_selection import train_test_split
