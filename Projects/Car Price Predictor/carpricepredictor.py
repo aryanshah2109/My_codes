@@ -145,3 +145,4 @@ except ValueError as e:
 with open(r'D:\CODING_CODES\AIML\Projects\Car Price Predictor\car_price_predictor_pickle','wb') as file:
   pickle.dump(linear_regressor,file)
 
+
