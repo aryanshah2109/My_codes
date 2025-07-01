@@ -14,12 +14,26 @@ from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.metrics import accuracy_score
 from sklearn.svm import SVC
 from sklearn.preprocessing import LabelEncoder
+from mlxtend.plotting import plot_decision_regions
 
-df = pd.read_csv('D:\CODING_CODES\AIML\ML\Supervised\Data\svm_practice_100.csv')
+df = pd.read_csv(r'D:\CODING_CODES\AIML\ML\Supervised\Data\svm_practice_100.csv')
 
-df = df.drop('ID',axis=1)
+df = df.drop('ID',axis=1)  # unnecessary column
 
-df.info()
+accept = df[df['Decision'] == 'Accept']
+reject = df[df['Decision'] == 'Reject']
+
+# Plot
+plt.figure(figsize=(8, 6))
+plt.scatter(accept['Exam_Score'], accept['Interview_Score'], color='blue', label='Accept')
+plt.scatter(reject['Exam_Score'], reject['Interview_Score'], color='red', label='Reject')
+plt.xlabel('Exam Score')
+plt.ylabel('Interview Score')
+plt.title('Scatter Plot of Exam vs Interview Scores')
+plt.legend()
+plt.show()
+
+print(df.info())
 
 X = df.drop('Decision',axis=1)
 y = df['Decision']
@@ -43,26 +57,15 @@ model = GridSearchCV(svc_model,param_grid=params,cv=5,scoring='accuracy')
 
 model.fit(X_train,y_train_transformed)
 
-model.best_params_
+print(model.best_params_)
 
 accuracy = accuracy_score(y_test_transformed,model.predict(X_test))
 accuracy
 
-def plot_decision_boundary(model, X, y):
-    h = 0.01
-    x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
-    y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
-    xx, yy = np.meshgrid(np.arange(x_min, x_max, h),
-                         np.arange(y_min, y_max, h))
-    Z = model.predict(np.c_[xx.ravel(), yy.ravel()])
-    Z = Z.reshape(xx.shape)
+plot_decision_regions(X_train.values, y_train_transformed, clf=model, legend=2)
 
-    plt.contourf(xx, yy, Z, cmap=plt.cm.coolwarm, alpha=0.8)
-    plt.scatter(X[:, 0], X[:, 1], c=y, cmap=plt.cm.coolwarm, edgecolors='k')
-    plt.xlabel('Exam Score')
-    plt.ylabel('Interview Score')
-    plt.title('SVM Decision Boundary')
-    plt.show()
-
-plot_decision_boundary(model, X_train, y_train_transformed)
+plt.xlabel('Feature 1')
+plt.ylabel('Feature 2')
+plt.title('SVM Decision Boundary using mlxtend')
+plt.show()
 
