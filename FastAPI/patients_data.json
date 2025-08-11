@@ -1,0 +1,34 @@
+{
+    "P001":{
+        "name":"Aman Gupta",
+        "age": 40,
+        "gender": "Male",
+        "city": "Ajmer",
+        "height": 1.65,
+        "weight": 87
+    },
+    "P002":{
+        "name":"Raj Verma",
+        "age": 28,
+        "gender": "Male",
+        "city": "Mumbai",
+        "height": 1.55,
+        "weight": 80
+    },
+    "P003":{
+        "name":"Payal Kaushal",
+        "age": 30,
+        "gender": "Female",
+        "city": "Dalhousie",
+        "height": 1.45,
+        "weight": 77
+    },
+    "P004":{
+        "name":"Nupur Arora",
+        "age": 20,
+        "gender": "Female",
+        "city": "Ahmedabad",
+        "height": 1.65,
+        "weight": 80
+    }
+}
