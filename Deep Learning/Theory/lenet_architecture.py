@@ -7,26 +7,13 @@ Original file is located at
     https://colab.research.google.com/drive/1gUEFQ2Re3RWMV_mZuKUn3KC24C5dLBIO
 """
 
-import tensorflow as tf
+import tensorflow
 from tensorflow import keras
 from keras import Sequential
 from keras.layers import Conv2D, AveragePooling2D, Flatten, Dense
 from keras.datasets import mnist
-import numpy as np
 
 (X_train,y_train),(X_test,y_test) = mnist.load_data()
-
-# Expand dims to add channel: (28,28) -> (28,28,1)
-X_train = np.expand_dims(X_train, axis=-1)
-X_test = np.expand_dims(X_test, axis=-1)
-
-# Resize to (32,32,1)
-X_train = tf.image.resize(X_train, [32, 32]).numpy()
-X_test = tf.image.resize(X_test, [32, 32]).numpy()
-
-# Normalize pixel values to [0,1]
-X_train = X_train / 255.0
-X_test = X_test / 255.0
 
 model = Sequential()
 
