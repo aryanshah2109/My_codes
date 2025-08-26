@@ -35,8 +35,6 @@ response_json = response.json()
 response_json_desc = response_json['description'][0]
 response_json_desc
 
-!pip install jikanpy-v4
-
 import requests
 from jikanpy import Jikan
 
