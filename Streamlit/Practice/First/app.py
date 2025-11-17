@@ -21,4 +21,5 @@ st.code(code_demo,language='python')
 st.divider()
 
 # adding an image
-st.image(os.path.join(os.getcwd(),"static","hqdefault.jpg"),caption="This is a docker image",width=500)
+
+st.image(os.path.join(os.getcwd(),""))
