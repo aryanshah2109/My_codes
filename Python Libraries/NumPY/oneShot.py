@@ -23,10 +23,9 @@ At the core of the NumPy package, is the ndarray object. This encapsulates n-dim
 
 - A growing plethora of scientific and mathematical Python-based packages are using NumPy arrays; though these typically support Python-sequence input, they convert such input to NumPy arrays prior to processing, and they often output NumPy arrays.
 
-### Creating Numpy Arrays
 """
 
-
+### Creating Numpy Arrays
 '''
 basics
 np.array([]) -> 1d 
@@ -295,3 +294,244 @@ print(a5)
 
 print(np.vsplit(a5,3))
 
+
+#### ADVANCED NUMPY
+print("\n\nArray: ")
+
+arr = np.random.randint(1,100,35).reshape(7,5)
+print(arr)
+
+## Fancy Indexing: return only given rows
+
+print("\n\n Fancy Indexing")
+print(arr[[3,4,5]])
+print("\n")
+print(arr[[1,5,2]])
+
+
+## Boolean Indexing: Return those rows that follow a particular condition
+print("\n\n Boolean Indexing")
+
+arr = np.random.randint(1,100,25).reshape(5,5)
+
+print(arr)
+
+print("\n")
+
+print(arr[arr > 70]) # Return elements which are greater than 70
+
+print("\n")
+
+print(arr[(arr % 2 == 0) & (arr > 50)]) # Return even numbers greater than 50
+
+
+## Broadcasting
+print("\nBroadcasting::")
+
+# it is a property of numpy where the dimension of an array is changed implicitely 
+# while performing any operation on it
+
+arr1 = np.array([[1,2,3],[4,5,6]])  # shape = (2,3)
+arr2 = np.array([1,2,3])            # shape = (3,)
+print(arr1+arr2)                    # shape = (2,3)
+
+# Here the 1D was changed into 2D by broadcasting
+# arr2 initailly was [1,2,3]
+# after broadcasting, it is now [[1,2,3],
+#                                [1,2,3]]
+# Hence the column was stretched with the same elements
+
+'''
+When performing operations between arrays, NumPy follows these rules:
+1) Compare shapes and if dimensions match, they are compatible.
+2) If dimensions do not match like one is (3,4) and second is (4) then add a 1 to the smaller dimension
+3) It will become (3,4) and (1,4) so will be of same dimensions
+4) Now if there is any one 1 in the shapes, the shape can be stretched to match the other corresponding value
+5) So, for (3,4) and (1,4) -> 1 will be stretched to 3
+6) So, resulting will be (3,4) and (3,4) and so operation can happen
+7) If neither dimension is 1 and they don't match, broadcasting fails.
+8) While stretching, the same elements are repeated.
+'''
+
+
+# This will broadcast and run
+arr1 = np.arange(12).reshape(3,4)   # Shape -> (3,4)
+arr2 = np.arange(4)                # Shape -> (4)
+
+print(arr1)
+print(arr2)
+'''
+ Broadcasting steps: 
+    1) Original shapes: (3,4) and (4) 
+    2) Convert smaller dimension to larger by adding 1. 
+    3) New Shapes: (3,4) and (1,4) 
+    4) Stretch array elements whereever 1 is present
+    5) New shapes: (3,4) and (3,4)
+'''
+print(arr1 + arr2)
+
+## NAN values
+arr = np.array([1,2,3,4, np.nan, 5,6])
+print(arr)
+
+# print non null values
+print(arr[~np.isnan(arr)])
+
+
+## Plotting mathematical functions graphs
+
+# x = y
+x = np.linspace(-10,10,100)
+y = x
+
+import matplotlib.pyplot as plt
+plt.plot(x,y)
+plt.show()
+
+
+# y = x2
+x = np.linspace(-10,10,100)
+y = x**2
+
+plt.plot(x,y)
+plt.show()
+
+# y = sin(x)
+x = np.linspace(-10,10,100)
+y = np.sin(x)
+
+plt.plot(x,y)
+plt.show()
+
+
+# y = exp(x)
+x = np.linspace(-10,10,100)
+y = np.exp(x)
+
+plt.plot(x,y)
+plt.show()
+
+
+# y = x3
+x = np.linspace(-10,10,100)
+y = x ** 3
+
+plt.plot(x,y)
+plt.show()
+
+
+### Extra functions
+
+## Sorting array
+print("\n\n Sorting arrays")
+
+arr = np.random.randint(1,50,15)
+print("\n")
+print(arr)
+
+print("\n")
+print(np.sort(arr))
+
+arr = np.random.randint(1,50,15).reshape(3,5)
+
+print("\n")
+print(arr)
+
+print("\n")
+print(np.sort(arr)) # Sort acc to rows
+
+print("\n")
+print(np.sort(arr, axis=0)) # Sort acc to cols
+
+
+# Append elements at end
+print("\n\n Appeding at end in arrays")
+
+arr = np.random.randint(1,50,15)
+
+print("\n")
+print(arr)
+
+print("\n")
+print(np.append(arr, 250)) 
+
+arr = np.random.randint(1,50,15).reshape(3,5)
+
+print("\n")
+print(arr)
+
+print("\n")
+print(np.append(arr, np.ones((arr.shape[0],1)), axis=1)) # Appending a column of all ones to end
+
+
+# Concatenating arrays: Alternative to hstack and vstack
+print("\n\nConcatenate arrays:")
+
+arr = np.random.randint(1,50,15).reshape(3,5)
+print(arr)
+print("\n")
+
+brr = np.random.randint(1,50,15).reshape(3,5)
+print(brr)
+print("\n")
+
+crr = np.concatenate((arr,brr), axis=1) # concatenate acc to row. hstack
+print(crr)
+print("\n")
+
+crr = np.concatenate((arr,brr), axis=0) # concatenate acc to col. vstack
+print(crr)
+print("\n")
+
+
+
+## Unique elements: Fetch unique elements
+print("\n\nUnique elements:")
+
+arr = np.array([1,1,3,3,4,5,6,3,4,5,2,5,6,3,4])
+print("\n")
+print(arr)
+
+print("\n")
+print(np.unique(arr))
+
+
+## Expand elements: Increases dimesions of array
+print("\n\nExpand dims:")
+
+arr = np.random.randint(1,100,15)
+print("\n")
+print(arr)
+
+print("\n")
+print(np.expand_dims(arr,axis=0))  # Row wise increase dims
+
+
+print("\n")
+print(np.expand_dims(arr,axis=1))  # Column wise increase dim
+
+
+## np.where : Give indices of elements that follow a condition
+print("\n\nWhere function:")
+
+arr = np.random.randint(1,100,15)
+print("\n")
+print(arr)
+
+print("\n")
+print(np.where(arr > 50))  # Return indices of elements > 50
+
+print("\n")
+print(np.where(arr < 30, 0, arr))  # Convert elements to 0 where elements < 30
+
+# Format: condition, True, False ==> if condition true, follow true else follow false
+
+## argmax: return index of maximum element in array
+print("\n\nArgmax function:")
+print(arr)
+print(np.argmax(arr))
+
+# Similarly, argmin gives index of minimum element
+
+
+## 
