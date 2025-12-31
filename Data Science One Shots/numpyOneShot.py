@@ -179,6 +179,8 @@ print(np.ceil(np.random.random((2,3))*100))
 
 """### Indexing and Slicing"""
 
+print("\nIndexing\n")
+
 a1 = np.arange(10)
 a2 = np.arange(12).reshape(3,4)
 a3 = np.arange(8).reshape(2,2,2)
@@ -240,6 +242,8 @@ print(a3[0,1,:])
 
 """### Iterating"""
 
+print("\n\nLooping")
+
 print(a1)
 
 for i in a1:
@@ -258,9 +262,9 @@ for i in a3:
 for i in np.nditer(a3):
   print(i)
 
-"""### Reshaping"""
+"""### Excess"""
 
-# reshape
+print("\n\nTranspose")
 
 # Transpose
 np.transpose(a2)
