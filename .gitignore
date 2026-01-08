@@ -5,4 +5,4 @@ venv/
 
 ./AIML/DOCKER_CODES/Project 1/*
 
-./AIML/Data Science One Shots/Datasets/*
+./AIML/Data Science One Shots/Datasets/*.csv
